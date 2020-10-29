@@ -7,5 +7,8 @@ RUN apk update \
     && git clone https://github.com/zhongfly/telegram-bot-asf.git \
     && mv ./telegram-bot-asf/ ./ \
     && rm -rf ./telegram-bot-asf \
-    && pip3 install -r requirements.txt
+    && pip3 install -r requirements.txt \
+    && apk del git \
+    && rm -rf /var/lib/apk/list/*
+WORKDIR /app
 ENTRYPOINT ["python3", "telegram-asf.py", "/app/config/*"]
