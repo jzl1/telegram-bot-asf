@@ -12,4 +12,4 @@ RUN apk update \
     && rm -rf /var/cache/apk/* \
     && rm -rf /var/lib/apk/* \
     && rm -rf /etc/apk/cache/* 
-ENTRYPOINT ["python3", "telegram-asf.py", "/app/config/*"]
+ENTRYPOINT ["python3", "telegram-asf.py", "/app/config/tgbot.toml"]
