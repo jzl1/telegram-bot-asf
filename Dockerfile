@@ -1,7 +1,7 @@
 FROM python:3.8.5-alpine3.12
 WORKDIR /app
 RUN apk update \
-    && apk add git gcc g++ python3-dev libffi-dev \
+    && apk add --no-cache git gcc g++ python3-dev libffi-dev openssl\
     && mkdir /app/config \
     && cd /app \
     && git clone https://github.com/zhongfly/telegram-bot-asf.git \
